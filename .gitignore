@@ -1,0 +1,11 @@
+# Ignore dir
+/node_modules
+
+# Ignore file
+*.lock
+*lock.json
+
+# Ignore IDE dir
+.idea
+
+# Ignore IDE file
