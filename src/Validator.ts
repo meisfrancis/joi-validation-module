@@ -8,7 +8,7 @@ export class Validator {
   private readonly _fieldCallback!: ILocalizationCallback;
   private readonly _errorCallback!: ILocalizationCallback;
 
-  constructor(config: { _fieldCallback: ILocalizationCallback; _errorCallback: ILocalizationCallback }) {
+  constructor(config: { _fieldCallback?: ILocalizationCallback; _errorCallback: ILocalizationCallback }) {
     if (!Validator.instance) {
       this._fieldCallback = config._fieldCallback;
       this._errorCallback = config._errorCallback;
@@ -33,7 +33,7 @@ export class Validator {
       let label;
       if (joiErrorCompact.field) {
         label = joiErrorCompact.field;
-      } else if (joiErrorCompact.locale_field) {
+      } else if (this._fieldCallback && joiErrorCompact.locale_field) {
         label = this._fieldCallback(lang, joiErrorCompact.locale_field);
       } else {
         label = joiErrorCompact.joiError?.local?.label;

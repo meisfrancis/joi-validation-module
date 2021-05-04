@@ -3,9 +3,10 @@ module.exports = {
     browser: true,
     commonjs: true,
     node: true,
+    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'jest'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -45,6 +46,7 @@ module.exports = {
     'no-undef': 'error',
     'constructor-super': 'error',
     'getter-return': ['error', { allowImplicit: true }],
+    'no-undefined': 'error',
     'no-duplicate-imports': 'error',
     'no-var': 'error',
     'no-extra-parens': 'warn',
@@ -131,5 +133,11 @@ module.exports = {
     'max-lines': ['warn', 1000],
     'max-lines-per-function': ['warn', 50],
     'max-nested-callbacks': ['warn', 4],
+    // Jest
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
   },
 };
