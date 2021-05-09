@@ -1,5 +1,5 @@
 {
-  "name": "validator-module",
+  "name": "joi-validator-module",
   "version": "1.0.0",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
